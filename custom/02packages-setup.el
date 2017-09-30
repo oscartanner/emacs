@@ -1,7 +1,7 @@
 ;; Auto complete
 (require 'auto-complete-config)
 (add-to-list 'ac-dictionary-directories
-	     "~/.emacs.d/elpa/auto-complete-20160710.1544/dict/")
+	     "~/.emacs.d/elpa/auto-complete-20170124.1845/dict/")
 (ac-config-default)
 (setq ac-ignore-case nil)
 (add-to-list 'ac-modes 'enh-ruby-mode)
@@ -41,4 +41,3 @@
 (global-set-key (kbd "C->") 'mc/mark-next-like-this)
 (global-set-key (kbd "C-<") 'mc/mark-previous-like-this)
 (global-set-key (kbd "C-c C-<") 'mc/mark-all-like-this)
-
