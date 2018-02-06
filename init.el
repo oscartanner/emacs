@@ -12,6 +12,23 @@
 			 ("marmalade" . "http://marmalade-repo.org/packages/")
 			 ("melpa" . "http://melpa.milkbox.net/packages/")))
 
+
+; list the packages you want
+(defvar package-list)
+(setq package-list '(markdown-mode magit textmate smartparens ruby-tools robe rbenv rainbow-mode projectile multiple-cursors grizzl flycheck feature-mode enh-ruby-mode auto-complete))
+
+; activate all the packages (in particular autoloads)
+(package-initialize)
+
+; fetch the list of packages available
+(unless package-archive-contents
+  (package-refresh-contents))
+
+; install the missing packages
+(dolist (package package-list)
+  (unless (package-installed-p package)
+    (package-install package)))
+
 (add-to-list 'load-path "~/.emacs.d/custom")
 (load "00common-setup.el")
 (load "01ruby-setup.el")
@@ -32,7 +49,7 @@
  '(menu-bar-mode nil)
  '(package-selected-packages
    (quote
-    (magit textmate smartparens ruby-tools robe rbenv rainbow-mode projectile multiple-cursors grizzl flycheck feature-mode enh-ruby-mode auto-complete)))
+    (markdown-mode magit textmate smartparens ruby-tools robe rbenv rainbow-mode projectile multiple-cursors grizzl flycheck feature-mode enh-ruby-mode auto-complete)))
  '(scroll-bar-mode nil)
  '(show-paren-mode t)
  '(tool-bar-mode nil))
