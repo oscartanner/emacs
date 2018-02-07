@@ -34,9 +34,6 @@
 (load "01ruby-setup.el")
 (load "02packages-setup.el")
 
-(require 'auto-complete)
-(global-auto-complete-mode t)
-
 (provide 'init)
 ;;; init.el ends here
 (custom-set-variables
