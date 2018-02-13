@@ -2,3 +2,4 @@ elpa/*
 network-security.data
 projectile-bookmarks.eld
 backups/*
+auto-save-list/*
