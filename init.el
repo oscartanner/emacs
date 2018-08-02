@@ -15,7 +15,7 @@
 
 ; list the packages you want
 (defvar package-list)
-(setq package-list '(json-mode magit textmate smartparens ruby-tools robe rbenv rainbow-mode projectile multiple-cursors grizzl flycheck feature-mode enh-ruby-mode auto-complete markdown-mode))
+(setq package-list '(json-mode magit textmate smartparens ruby-tools robe rbenv rainbow-mode projectile multiple-cursors grizzl flycheck feature-mode enh-ruby-mode auto-complete markdown-mode go-projectile flycheck gotest company company-go))
 
 ; activate all the packages (in particular autoloads)
 (package-initialize)
@@ -33,6 +33,7 @@
 (load "00common-setup.el")
 (load "01ruby-setup.el")
 (load "02packages-setup.el")
+(load "03go-setup.el")
 
 (provide 'init)
 ;;; init.el ends here
