@@ -3,3 +3,8 @@ network-security.data
 projectile-bookmarks.eld
 backups/*
 auto-save-list/*
+.mc-lists.el
+ac-comphist.dat
+gotools/*
+ido.last
+projectile.cache
