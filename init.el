@@ -5,6 +5,9 @@
 ;;;
 ;;; Code:
 
+
+;;; REMEBER to Run M-x all-the-icons-install-fonts
+
 (package-initialize)
 
 ;; Repositories
@@ -15,7 +18,7 @@
 
 ; list the packages you want
 (defvar package-list)
-(setq package-list '(json-mode magit textmate smartparens ruby-tools robe rbenv rainbow-mode projectile multiple-cursors grizzl flycheck feature-mode enh-ruby-mode auto-complete markdown-mode go-projectile flycheck gotest company company-go))
+(setq package-list '(json-mode magit textmate smartparens ruby-tools robe rbenv rainbow-mode projectile multiple-cursors grizzl flycheck feature-mode enh-ruby-mode auto-complete markdown-mode go-projectile flycheck gotest company company-go pandoc-mode exec-path-from-shell doom-modeline doom-themes))
 
 ; activate all the packages (in particular autoloads)
 (package-initialize)
@@ -44,10 +47,11 @@
  ;; If there is more than one, they won't work right.
  '(column-number-mode t)
  '(display-time-mode t)
+ '(markdown-command "/usr/local/bin/pandoc")
  '(menu-bar-mode nil)
  '(package-selected-packages
    (quote
-    (json-mode markdown-mode magit textmate smartparens ruby-tools robe rbenv rainbow-mode projectile multiple-cursors grizzl flycheck feature-mode enh-ruby-mode auto-complete)))
+    (doom-themes doom-modeline exec-path-from-shell pandoc-mode json-mode markdown-mode magit textmate smartparens ruby-tools robe rbenv rainbow-mode projectile multiple-cursors grizzl flycheck feature-mode enh-ruby-mode auto-complete)))
  '(scroll-bar-mode nil)
  '(show-paren-mode t)
  '(tool-bar-mode nil))
