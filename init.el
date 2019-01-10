@@ -18,7 +18,7 @@
 
 ; list the packages you want
 (defvar package-list)
-(setq package-list '(json-mode magit textmate smartparens ruby-tools robe rbenv rainbow-mode projectile multiple-cursors grizzl flycheck feature-mode enh-ruby-mode auto-complete markdown-mode go-projectile flycheck gotest company company-go pandoc-mode exec-path-from-shell doom-modeline doom-themes yaml-mode dockerfile-mode))
+(setq package-list '(json-mode magit textmate smartparens ruby-tools robe rbenv rainbow-mode projectile multiple-cursors grizzl flycheck feature-mode enh-ruby-mode auto-complete markdown-mode go-projectile flycheck gotest company company-go pandoc-mode exec-path-from-shell doom-modeline doom-themes yaml-mode dockerfile-mode tide))
 
 ; activate all the packages (in particular autoloads)
 (package-initialize)
@@ -37,6 +37,7 @@
 (load "01ruby-setup.el")
 (load "02packages-setup.el")
 (load "03go-setup.el")
+(load "04typescript-setup.el")
 
 (provide 'init)
 ;;; init.el ends here
@@ -51,10 +52,11 @@
  '(menu-bar-mode nil)
  '(package-selected-packages
    (quote
-    (dockerfile-mode yaml-mode doom-themes doom-modeline exec-path-from-shell pandoc-mode json-mode markdown-mode magit textmate smartparens ruby-tools robe rbenv rainbow-mode projectile multiple-cursors grizzl flycheck feature-mode enh-ruby-mode auto-complete)))
+    (tide dockerfile-mode yaml-mode doom-themes doom-modeline exec-path-from-shell pandoc-mode json-mode markdown-mode magit textmate smartparens ruby-tools robe rbenv rainbow-mode projectile multiple-cursors grizzl flycheck feature-mode enh-ruby-mode auto-complete)))
  '(scroll-bar-mode nil)
  '(show-paren-mode t)
- '(tool-bar-mode nil))
+ '(tool-bar-mode nil)
+ '(typescript-indent-level 2))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

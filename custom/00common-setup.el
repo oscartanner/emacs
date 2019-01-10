@@ -95,6 +95,13 @@
 (setq default-buffer-file-coding-system 'utf-8)
 (setq x-select-request-type '(UTF8_STRING COMPOUND_TEXT TEXT STRING))
 
+;; Enables Company mode for all buffers
+(add-hook 'after-init-hook 'global-company-mode)
+
+;; Add homebrew bin path to Emacs exec-path
+(setenv "PATH" (concat (getenv "PATH") ":/usr/local/bin/"))
+(setq exec-path (append exec-path '("/usr/local/bin/")))
+
 ;; Used mainly to hide menu and scroll bars
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
