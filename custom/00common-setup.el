@@ -54,8 +54,6 @@
 (doom-themes-org-config)
 
 ;; Toggle the option key as meta - made by Me :)
-(set-cursor-color "#f8f515") ; Sets the cursor initial color
-
 (global-set-key (kbd "C-;") `tf-toggle-option-as-meta)
 
 (defun tf-toggle-option-as-meta ()
@@ -64,7 +62,7 @@
   (if (null mac-option-modifier)
       (progn
 	(message "Alt is meta")
-	(set-cursor-color "#f8f515")
+	(set-cursor-color "#51afef")
 	(setq mac-option-modifier `meta))
     (progn
       (message "Alt is not meta")
