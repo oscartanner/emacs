@@ -20,6 +20,7 @@
 
 (setq tide-format-options '(:insertSpaceAfterFunctionKeywordForAnonymousFunctions t :placeOpenBraceOnNewLineForFunctions nil :indentSize 2 :tabSize 2 :insertSpaceAfterOpeningAndBeforeClosingTemplateStringBraces nil :placeOpenBraceOnNewLineForControlBlocks nil))
 
+(setq js-indent-level 2)
 
 ;; (provide '04typescript-setup)
 ;;; 04typescript-setup.el ends here
