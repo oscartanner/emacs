@@ -32,6 +32,8 @@
 (global-set-key (kbd "s-p") 'projectile-find-file)
 ;; Press Command-b for fuzzy switch buffer
 (global-set-key (kbd "s-b") 'projectile-switch-to-buffer)
+;; Git project folders
+(setq projectile-project-search-path '("~/dev/"))
 
 ;; Rainbow mode
 (require 'rainbow-mode)
