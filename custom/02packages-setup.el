@@ -33,6 +33,7 @@
 ;; Press Command-b for fuzzy switch buffer
 ;; (global-set-key (kbd "s-b") 'projectile-switch-to-buffer)
 ;; Git project folders
+(define-key projectile-mode-map (kbd "s-p") 'projectile-command-map)
 (setq projectile-project-search-path '("~/dev/"))
 
 ;; Rainbow mode
