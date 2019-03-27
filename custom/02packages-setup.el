@@ -9,11 +9,11 @@
 (setq ac-ignore-case nil)
 (add-to-list 'ac-modes 'enh-ruby-mode)
 
-
-;; TextMate Mode
-(add-to-list 'load-path "~/.emacs.d/vendor/textmate.el")
-(require 'textmate)
-(textmate-mode)
+;; IDO mode
+(setq ido-enable-flex-matching nil)
+(setq ido-create-new-buffer 'always)
+(setq ido-everywhere t)
+(ido-mode 1)
 
 ;; Smart Parens
 (require 'smartparens-config)
