@@ -31,12 +31,16 @@
   (unless (package-installed-p package)
     (package-install package)))
 
+(require 'package)
+(require 'use-package)
+
 (add-to-list 'load-path "~/.emacs.d/custom")
 (load "00common-setup.el")
 (load "01ruby-setup.el")
 (load "02packages-setup.el")
 (load "03go-setup.el")
 (load "04typescript-setup.el")
+(load "05scala_setup.el")
 
 (provide 'init)
 ;;; init.el ends here
@@ -51,7 +55,7 @@
  '(menu-bar-mode nil)
  '(package-selected-packages
    (quote
-    (groovy-modeg tide dockerfile-mode yaml-mode doom-themes doom-modeline exec-path-from-shell pandoc-mode json-mode markdown-mode magit smartparens ruby-tools robe rbenv rainbow-mode projectile multiple-cursors grizzl flycheck feature-mode enh-ruby-mode auto-complete ensime use-package)))
+    (python-mode groovy-mode tide dockerfile-mode yaml-mode doom-themes doom-modeline exec-path-from-shell pandoc-mode json-mode markdown-mode magit smartparens ruby-tools robe rbenv rainbow-mode projectile multiple-cursors grizzl flycheck feature-mode enh-ruby-mode auto-complete ensime use-package)))
  '(scroll-bar-mode nil)
  '(show-paren-mode t)
  '(tool-bar-mode nil)
