@@ -38,9 +38,10 @@
 (load "00common-setup.el")
 (load "01ruby-setup.el")
 (load "02packages-setup.el")
-(load "03go-setup.el")
+;; (load "03go-setup.el")
 (load "04typescript-setup.el")
 (load "05scala_setup.el")
+(load "06python.el")
 
 (provide 'init)
 ;;; init.el ends here
@@ -55,7 +56,7 @@
  '(menu-bar-mode nil)
  '(package-selected-packages
    (quote
-    (python-mode groovy-mode tide dockerfile-mode yaml-mode doom-themes doom-modeline exec-path-from-shell pandoc-mode json-mode markdown-mode magit smartparens ruby-tools robe rbenv rainbow-mode projectile multiple-cursors grizzl flycheck feature-mode enh-ruby-mode auto-complete ensime use-package)))
+    (py-autopep8 elpy company-jedi python-mode groovy-mode tide dockerfile-mode yaml-mode doom-themes doom-modeline exec-path-from-shell pandoc-mode json-mode markdown-mode magit smartparens ruby-tools robe rbenv rainbow-mode projectile multiple-cursors grizzl flycheck feature-mode enh-ruby-mode auto-complete ensime use-package)))
  '(scroll-bar-mode nil)
  '(show-paren-mode t)
  '(tool-bar-mode nil)
@@ -66,3 +67,4 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  )
+(put 'downcase-region 'disabled nil)
