@@ -20,7 +20,13 @@
 
 (setq tide-format-options '(:insertSpaceAfterFunctionKeywordForAnonymousFunctions t :placeOpenBraceOnNewLineForFunctions nil :indentSize 2 :tabSize 2 :insertSpaceAfterOpeningAndBeforeClosingTemplateStringBraces nil :placeOpenBraceOnNewLineForControlBlocks nil))
 
-(setq js-indent-level 2)
+(setq js-indent-level 4)
+
+(defun my-js-mode-hook ()
+  "Custom `js-mode' behaviours."
+  (setq indent-tabs-mode nil))
+
+(add-hook 'js-mode-hook 'my-js-mode-hook)
 
 ;; (provide '04typescript-setup)
 ;;; 04typescript-setup.el ends here

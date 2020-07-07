@@ -1,6 +1,6 @@
 ;;; Code:
 ;; Enh Ruby Mode Configuration
-(setq enh-ruby-program "/Users/oscar/.rbenv/versions/2.6.2/bin/ruby")
+(setq enh-ruby-program "/Users/oscar/.rbenv/versions/2.7.0/bin/ruby")
 (autoload 'enh-ruby-mode "enh-ruby-mode" "Major mode for ruby files" t)
 (add-to-list 'auto-mode-alist '("\\.rb$" . enh-ruby-mode))
 (add-to-list 'auto-mode-alist '("\\.rake$" . enh-ruby-mode))
