@@ -11,9 +11,13 @@
 (package-initialize)
 
 ;; Repositories
-(setq package-archives '(("gnu" . "http://elpa.gnu.org/packages/")
-			 ("melpa" . "http://melpa.milkbox.net/packages/")))
+(require 'package)
+(add-to-list 'package-archives
+             '("melpa" . "http://melpa.org/packages/") t)
 
+;; When machine is new, please run
+;; M-x package-refresh-contents RET
+;; Restart emacs
 
 ; list the packages you want
 (defvar package-list)
@@ -40,8 +44,8 @@
 (load "02packages-setup.el")
 ;; (load "03go-setup.el")
 (load "04typescript-setup.el")
-(load "05scala_setup.el")
-(load "06python.el")
+;;(load "05scala_setup.el")
+;;(load "06python.el")
 
 (provide 'init)
 ;;; init.el ends here
@@ -56,7 +60,7 @@
  '(menu-bar-mode nil)
  '(package-selected-packages
    (quote
-    (py-autopep8 elpy company-jedi python-mode groovy-mode tide dockerfile-mode yaml-mode doom-themes doom-modeline exec-path-from-shell pandoc-mode json-mode markdown-mode magit smartparens ruby-tools robe rbenv rainbow-mode projectile multiple-cursors grizzl flycheck feature-mode enh-ruby-mode auto-complete ensime use-package protobuf-mode)))
+    (py-autopep8 elpy company-jedi python-mode groovy-mode tide dockerfile-mode yaml-mode doom-themes doom-modeline exec-path-from-shell pandoc-mode json-mode markdown-mode magit smartparens ruby-tools robe rbenv rainbow-mode projectile multiple-cursors grizzl flycheck feature-mode enh-ruby-mode auto-complete use-package protobuf-mode)))
  '(scroll-bar-mode nil)
  '(show-paren-mode t)
  '(tool-bar-mode nil)
