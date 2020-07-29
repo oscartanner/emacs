@@ -8,3 +8,4 @@ ac-comphist.dat
 gotools/*
 ido.last
 projectile.cache
+transient/*
