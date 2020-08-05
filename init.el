@@ -21,7 +21,7 @@
 
 ; list the packages you want
 (defvar package-list)
-(setq package-list '(json-mode magit smartparens ruby-tools robe rbenv rainbow-mode projectile multiple-cursors grizzl flycheck feature-mode enh-ruby-mode auto-complete markdown-mode go-projectile gotest company company-go pandoc-mode exec-path-from-shell doom-modeline doom-themes yaml-mode dockerfile-mode tide groovy-mode use-package protobuf-mode))
+(setq package-list '(json-mode magit smartparens ruby-tools robe rbenv rainbow-mode projectile multiple-cursors grizzl flycheck feature-mode enh-ruby-mode auto-complete markdown-mode go-projectile gotest company company-go pandoc-mode exec-path-from-shell doom-modeline doom-themes yaml-mode dockerfile-mode tide groovy-mode use-package protobuf-mode elpy))
 
 ; activate all the packages (in particular autoloads)
 (package-initialize)
@@ -45,7 +45,7 @@
 ;; (load "03go-setup.el")
 (load "04typescript-setup.el")
 ;;(load "05scala_setup.el")
-;;(load "06python.el")
+;; (load "06python.el")
 
 (provide 'init)
 ;;; init.el ends here
