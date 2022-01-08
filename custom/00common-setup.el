@@ -30,6 +30,8 @@
 (tool-bar-mode nil)
 (menu-bar-mode nil)
 
+;; Set Find File default start path
+(setq default-directory "~/")
 
 ;; Themes Configuration
 (require 'doom-themes)

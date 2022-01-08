@@ -1,7 +1,20 @@
 ;; Remember to run M-x jedi:install-server
 
 (elpy-enable)
+;; (pyenv-mode)
 
+;; (setq elpy-rpc-virtualenv-path 'current)
+
+;; Enable Flycheck
+(when (require 'flycheck nil t)
+  (setq elpy-modules (delq 'elpy-module-flymake elpy-modules))
+  (add-hook 'elpy-mode-hook 'flycheck-mode))
+
+;; Enable auto format code on save - autopep8
+(require 'py-autopep8)
+(add-hook 'elpy-mode-hook 'py-autopep8-enable-on-save)
+
+;; Auto complete backend for company - Jedi
 (add-hook 'python-mode-hook 'jedi:setup)
 (setq jedi:complete-on-dot t)
 
@@ -10,6 +23,6 @@
 
 (add-hook 'python-mode-hook 'my/python-mode-hook)
 
-;; Auto identation
-(require 'py-autopep8)
-(add-hook 'elpy-mode-hook 'py-autopep8-enable-on-save)
+;; (setq python-shell-interpreter "ipython"
+;;       python-shell-interpreter-args "-i --simple-prompt")
+
