@@ -3,8 +3,6 @@
 (elpy-enable)
 ;; (pyenv-mode)
 
-;; (setq elpy-rpc-virtualenv-path 'current)
-
 ;; Enable Flycheck
 (when (require 'flycheck nil t)
   (setq elpy-modules (delq 'elpy-module-flymake elpy-modules))
@@ -23,6 +21,6 @@
 
 (add-hook 'python-mode-hook 'my/python-mode-hook)
 
-;; (setq python-shell-interpreter "ipython"
-;;       python-shell-interpreter-args "-i --simple-prompt")
+(setq python-shell-interpreter "ipython"
+      python-shell-interpreter-args "-i --simple-prompt")
 
