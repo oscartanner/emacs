@@ -12,9 +12,12 @@
 (require 'py-autopep8)
 (add-hook 'elpy-mode-hook 'py-autopep8-enable-on-save)
 
-;; Auto complete backend for company - Jedi
+;; Auto complete backend for company - jedi
 (add-hook 'python-mode-hook 'jedi:setup)
 (setq jedi:complete-on-dot t)
+
+;; Disable autocomplete to not conflict with company - jedi
+(add-hook 'python-mode-hook (lambda () (auto-complete-mode -1)))
 
 (defun my/python-mode-hook ()
    (add-to-list 'company-backends 'company-jedi))
