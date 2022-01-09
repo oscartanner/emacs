@@ -21,7 +21,7 @@
 
 ; list the packages you want
 (defvar package-list)
-(setq package-list '(json-mode magit smartparens ruby-tools robe rbenv rainbow-mode projectile multiple-cursors grizzl flycheck feature-mode enh-ruby-mode auto-complete markdown-mode go-projectile gotest company company-go pandoc-mode exec-path-from-shell doom-modeline doom-themes yaml-mode dockerfile-mode tide groovy-mode use-package protobuf-mode elpy pyenv-mode py-autopep8 company-jedi))
+(setq package-list '(json-mode magit smartparens ruby-tools robe rbenv rainbow-mode projectile multiple-cursors grizzl flycheck feature-mode enh-ruby-mode auto-complete markdown-mode go-projectile gotest pandoc-mode exec-path-from-shell doom-modeline doom-themes yaml-mode dockerfile-mode tide groovy-mode use-package protobuf-mode elpy pyenv-mode py-autopep8 ))
 
 ; activate all the packages (in particular autoloads)
 (package-initialize)
@@ -42,10 +42,11 @@
 (load "00common-setup.el")
 (load "01ruby-setup.el")
 (load "02packages-setup.el")
-;; (load "03go-setup.el")
+(load "03python.el")
 (load "04typescript-setup.el")
-;;(load "05scala_setup.el")
-(load "06python.el")
+;; (load "05scala_setup.el")
+;; (load "06go-setup.el")
+
 
 (provide 'init)
 ;;; init.el ends here
@@ -59,7 +60,7 @@
  '(markdown-command "/usr/local/bin/pandoc")
  '(menu-bar-mode nil)
  '(package-selected-packages
-   '(company-jedi protobuf-mode elpy python-mode groovy-mode tide dockerfile-mode yaml-mode doom-themes doom-modeline exec-path-from-shell pandoc-mode json-mode markdown-mode magit smartparens ruby-tools robe rbenv rainbow-mode projectile multiple-cursors grizzl flycheck feature-mode enh-ruby-mode auto-complete use-package pyenv-mode py-autopep8))
+   '(protobuf-mode elpy python-mode groovy-mode tide dockerfile-mode yaml-mode doom-themes doom-modeline exec-path-from-shell pandoc-mode json-mode markdown-mode magit smartparens ruby-tools robe rbenv rainbow-mode projectile multiple-cursors grizzl flycheck feature-mode enh-ruby-mode auto-complete use-package pyenv-mode py-autopep8))
  '(scroll-bar-mode nil)
  '(show-paren-mode t)
  '(tool-bar-mode nil)
