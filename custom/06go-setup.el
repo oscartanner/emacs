@@ -37,12 +37,12 @@
 
 ;; Search for auto complete instead of company
 ; "company" is auto-completion
-;; (require 'company)
-;; (require 'go-mode)
-;; (require 'company-go)
-;; (add-hook 'go-mode-hook (lambda ()
-                          ;; (company-mode)
-                          ;; (set (make-local-variable 'company-backends) '(company-go))))
+(require 'company)
+(require 'go-mode)
+(require 'company-go)
+(add-hook 'go-mode-hook (lambda ()
+                          (company-mode)
+                          (set (make-local-variable 'company-backends) '(company-go))))
 
 ; gotest defines a better set of error regexps for go tests, but it only
 ; enables them when using its own functions. Add them globally for use in

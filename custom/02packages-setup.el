@@ -1,13 +1,13 @@
 ;; Auto complete
-(require 'auto-complete)
-(global-auto-complete-mode t)
+;; (require 'auto-complete)
+;; (global-auto-complete-mode t)
 
-(require 'auto-complete-config)
-(add-to-list 'ac-dictionary-directories
-	     "~/.emacs.d/elpa/auto-complete-20170124.1845/dict/")
-(ac-config-default)
-(setq ac-ignore-case nil)
-(add-to-list 'ac-modes 'enh-ruby-mode)
+;; (require 'auto-complete-config)
+;; (add-to-list 'ac-dictionary-directories
+	     ;; "~/.emacs.d/elpa/auto-complete-20170124.1845/dict/")
+;; (ac-config-default)
+;; (setq ac-ignore-case nil)
+;; (add-to-list 'ac-modes 'enh-ruby-mode)
 
 ;; IDO mode
 (setq ido-enable-flex-matching nil)

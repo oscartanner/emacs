@@ -37,7 +37,7 @@ of FILE in the current directory, suitable for creation"
 ;; Robe Mode
 (add-hook 'ruby-mode-hook 'robe-mode)
 ;; Robe with autocomplete
-(add-hook 'robe-mode-hook 'ac-robe-setup)
+;; (add-hook 'robe-mode-hook 'ac-robe-setup)
 
 ;; Feature Mode
 (require 'feature-mode)

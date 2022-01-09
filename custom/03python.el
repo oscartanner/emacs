@@ -3,6 +3,9 @@
 (elpy-enable)
 ;; (pyenv-mode)
 
+(setq python-shell-interpreter "ipython"
+      python-shell-interpreter-args "-i --simple-prompt")
+
 ;; Enable Flycheck
 (when (require 'flycheck nil t)
   (setq elpy-modules (delq 'elpy-module-flymake elpy-modules))
@@ -12,11 +15,11 @@
 (require 'py-autopep8)
 (add-hook 'elpy-mode-hook 'py-autopep8-enable-on-save)
 
-;; Enable autocomplete
+;; Autocomplete company-jedi
+;; (defun my/python-mode-hook ()
+  ;; (add-to-list 'company-backends 'company-jedi))
 
-
-(setq python-shell-interpreter "ipython"
-      python-shell-interpreter-args "-i --simple-prompt")
+;; (add-hook 'python-mode-hook 'my/python-mode-hook)
 
 ;; Set default Python virtualenv on startup
 (pyvenv-workon 'py39)
