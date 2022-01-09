@@ -42,7 +42,7 @@
 
 ;; Load the theme (doom-one, doom-molokai, etc); keep in mind that each theme
 ;; may have their own settings.
-(load-theme 'doom-one t)
+(load-theme 'doom-dark+ t)
 
 ;; Enable flashing mode-line on errors
 (doom-themes-visual-bell-config)
@@ -64,7 +64,7 @@
   (if (null mac-option-modifier)
       (progn
 	(message "Alt is meta")
-	(set-cursor-color "#51afef")
+	(set-cursor-color "#237AD3")
 	(setq mac-option-modifier `meta))
     (progn
       (message "Alt is not meta")
