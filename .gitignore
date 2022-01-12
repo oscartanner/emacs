@@ -9,3 +9,5 @@ gotools/*
 ido.last
 projectile.cache
 transient/*
+buftra.el
+py-autoflake.el
