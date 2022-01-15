@@ -25,5 +25,13 @@
 (add-hook 'python-mode-hook 'py-autoflake-enable-on-save)
 (setq py-autoflake-options '("--remove-all-unused-imports"))
 
+;; Use importmagic to autoimport missing dependencies
+(use-package importmagic
+    :ensure t
+    :config
+    (add-hook 'python-mode-hook 'importmagic-mode))
+
+(setq importmagic-be-quiet t)
+
 ;; Set default Python virtualenv on startup
 (pyvenv-workon 'py39)
