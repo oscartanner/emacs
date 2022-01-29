@@ -1,5 +1,5 @@
 ;;; Remember to install all denpendencies in Virtual Env:
-;;; pip install autopep8 flake8 jedi yapf black rope virtualenv importmagic epc isort
+;;; pip install autopep8 flake8 jedi yapf black rope virtualenv importmagic epc isort autoflake
 
 ;;;  Remember to run M-x jedi:install-server
 
@@ -46,3 +46,10 @@
 (add-to-list 'auto-mode-alist '("\\.mustache\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.djhtml\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
+
+;; Remove unused imports on C-c C-i
+(load "~/.emacs.d/buftra.el")
+(load "~/.emacs.d/py-autoflake.el")
+(setq py-autoflake-options '("--remove-all-unused-imports"))
+
+(global-set-key (kbd "C-c C-i") `py-autoflake-buffer)
