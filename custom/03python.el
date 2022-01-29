@@ -1,6 +1,15 @@
-;; Remember to run M-x jedi:install-server
+;;; Remember to install all denpendencies in Virtual Env:
+;;; pip install autopep8 flake8 jedi yapf black rope virtualenv importmagic epc isort
+
+;;;  Remember to run M-x jedi:install-server
+
+;; Set default Python virtualenv on startup
+(pyvenv-workon 'py39)
 
 (elpy-enable)
+
+;; Elpy will use current enable virtual env
+(setq elpy-rpc-virtualenv-path 'current)
 
 (setq python-shell-interpreter "ipython"
       python-shell-interpreter-args "-i --simple-prompt")
@@ -18,12 +27,6 @@
 (add-to-list 'load-path "~/dev")
 (require 'py-isort)
 (add-hook 'before-save-hook 'py-isort-before-save)
-
-;; Use py-autoflake to remove unused imports and variables
-(load "~/.emacs.d/buftra.el")
-(load "~/.emacs.d/py-autoflake.el")
-(add-hook 'python-mode-hook 'py-autoflake-enable-on-save)
-(setq py-autoflake-options '("--remove-all-unused-imports"))
 
 ;; Use importmagic to autoimport missing dependencies
 (use-package importmagic
@@ -43,6 +46,3 @@
 (add-to-list 'auto-mode-alist '("\\.mustache\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.djhtml\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
-
-;; Set default Python virtualenv on startup
-(pyvenv-workon 'py39)
