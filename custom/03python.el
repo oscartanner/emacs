@@ -1,6 +1,7 @@
+;;; 03python -- Summary
+;;; Commentary:
 ;;; Remember to install all denpendencies in Virtual Env:
 ;;; pip install autopep8 flake8 jedi yapf black rope virtualenv importmagic epc isort autoflake
-
 ;;;  Remember to run M-x jedi:install-server
 
 ;; Set default Python virtualenv on startup
@@ -18,10 +19,6 @@
 (when (require 'flycheck nil t)
   (setq elpy-modules (delq 'elpy-module-flymake elpy-modules))
   (add-hook 'elpy-mode-hook 'flycheck-mode))
-
-;; Enable auto format code on save - autopep8
-(require 'py-autopep8)
-(add-hook 'elpy-mode-hook 'py-autopep8-enable-on-save)
 
 ;; Use py-isort on before save hook
 (add-to-list 'load-path "~/dev")
@@ -53,3 +50,11 @@
 (setq py-autoflake-options '("--remove-all-unused-imports"))
 
 (global-set-key (kbd "C-c C-i") `py-autoflake-buffer)
+
+;; Use Black for code formatting
+(add-hook 'elpy-mode-hook (lambda ()
+                            (add-hook 'before-save-hook
+                                      'elpy-black-fix-code nil t)))
+
+(provide '03python)
+;;; 03python ends here
