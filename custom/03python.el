@@ -51,11 +51,7 @@
 
 (global-set-key (kbd "C-c C-i") `py-autoflake-buffer)
 
-;; Use Black for code formatting
-;; (add-hook 'elpy-mode-hook (lambda ()
-                            ;; (add-hook 'before-save-hook
-                                      ;; 'elpy-black-fix-code nil t)))
-
+;; Use Blacken for code formatting
 (add-hook 'python-mode-hook 'blacken-mode)
 
 (provide '03python)
