@@ -83,6 +83,14 @@
   )
 (global-set-key (kbd "s-/") 'comment-or-uncomment-line-or-region)
 
+;; Add keyboard shortcut for M-x find-grep-dired
+(global-set-key (kbd "M-s s") 'find-grep-dired)
+
+;; Add shortcut to debug snippet in python
+(defun debug-in-python-snippet ()
+  (interactive)
+  (insert "import pdb; pdb.set_trace()"))
+(global-set-key (kbd "M-s p") 'debug-in-python-snippet)
 
 ;; Highlight matching parentheses
 (show-paren-mode 1)
@@ -91,7 +99,16 @@
 (setq inhibit-startup-screen t)
 
 ;; Flycheck
-(add-hook 'after-init-hook #'global-flycheck-mode)
+(dolist (hook '(text-mode-hook))
+  (add-hook hook (lambda () (flyspell-mode 1))))
+
+(eval-after-load "flyspell"
+  '(progn
+     (define-key flyspell-mouse-map [down-mouse-3] #'flyspell-correct-word)
+     (define-key flyspell-mouse-map [mouse-3] #'undefined)))
+
+;; Spell check
+(setq ispell-program-name "/opt/homebrew/bin/ispell")
 
 ;; Pandoc-mode for markdown
 (add-hook 'markdown-mode-hook 'pandoc-mode)
