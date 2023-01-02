@@ -86,12 +86,6 @@
 ;; Add keyboard shortcut for M-x find-grep-dired
 (global-set-key (kbd "M-s s") 'find-grep-dired)
 
-;; Add shortcut to debug snippet in python
-(defun debug-in-python-snippet ()
-  (interactive)
-  (insert "import pdb; pdb.set_trace()"))
-(global-set-key (kbd "M-s p") 'debug-in-python-snippet)
-
 ;; Highlight matching parentheses
 (show-paren-mode 1)
 
@@ -132,6 +126,9 @@
 
 ;; Number the candidates (use M-1, M-2 etc to select completions).
 (setq company-show-numbers t)
+
+;; Use spaces instead of tabs
+(setq-default indent-tabs-mode nil)
 
 ;; (require 'company-tabnine)
 

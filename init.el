@@ -21,7 +21,7 @@
 
 ; list the packages you want
 (defvar package-list)
-(setq package-list '(json-mode magit smartparens ruby-tools robe rbenv rainbow-mode projectile multiple-cursors grizzl flycheck feature-mode enh-ruby-mode markdown-mode go-projectile gotest pandoc-mode exec-path-from-shell doom-modeline doom-themes yaml-mode dockerfile-mode tide groovy-mode use-package protobuf-mode elpy py-autopep8 company company-go importmagic web-mode company-jedi py-isort blacken))
+(setq package-list '(json-mode magit smartparens ruby-tools robe rbenv rainbow-mode projectile multiple-cursors grizzl flycheck feature-mode enh-ruby-mode markdown-mode go-projectile gotest pandoc-mode exec-path-from-shell doom-modeline doom-themes yaml-mode dockerfile-mode tide groovy-mode use-package protobuf-mode elpy py-autopep8 company company-go importmagic web-mode company-jedi py-isort blacken css-mode scss-mode typescript-mode lsp-tailwindcss prettier))
 
 ; activate all the packages (in particular autoloads)
 (package-initialize)
@@ -60,7 +60,7 @@
  '(markdown-command "/usr/local/bin/pandoc")
  '(menu-bar-mode nil)
  '(package-selected-packages
-   '(blacken protobuf-mode elpy python-mode groovy-mode tide dockerfile-mode yaml-mode doom-themes doom-modeline exec-path-from-shell pandoc-mode json-mode markdown-mode magit smartparens ruby-tools robe rbenv rainbow-mode projectile multiple-cursors grizzl flycheck feature-mode enh-ruby-mode use-package pyenv-mode py-autopep8))
+   '(prettier lsp-tailwindcss blacken protobuf-mode elpy python-mode groovy-mode dockerfile-mode yaml-mode doom-themes doom-modeline exec-path-from-shell pandoc-mode json-mode markdown-mode magit smartparens ruby-tools robe rbenv rainbow-mode projectile multiple-cursors grizzl flycheck feature-mode enh-ruby-mode use-package pyenv-mode py-autopep8))
  '(scroll-bar-mode nil)
  '(show-paren-mode t)
  '(tool-bar-mode nil)

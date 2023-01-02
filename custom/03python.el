@@ -44,6 +44,12 @@
 (add-to-list 'auto-mode-alist '("\\.djhtml\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
 
+(defun my-web-mode-hook ()
+  "Hooks for Web mode."
+  (setq web-mode-markup-indent-offset 2)
+)
+(add-hook 'web-mode-hook  'my-web-mode-hook)
+
 ;; Remove unused imports on C-c C-i
 (load "~/.emacs.d/buftra.el")
 (load "~/.emacs.d/py-autoflake.el")
@@ -53,6 +59,12 @@
 
 ;; Use Blacken for code formatting
 (add-hook 'python-mode-hook 'blacken-mode)
+
+;; Add shortcut to debug snippet
+(defun debug-in-python-snippet ()
+  (interactive)
+  (insert "import pdb; pdb.set_trace()  # fmt: skip"))
+(global-set-key (kbd "M-s p") 'debug-in-python-snippet)
 
 (provide '03python)
 ;;; 03python ends here
