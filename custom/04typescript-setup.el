@@ -29,12 +29,7 @@ apps are not started from a shell."
 ;; aligns annotation to the right hand side
 ;; (setq company-tooltip-align-annotations t)
 
-;; formats the buffer before saving
-(add-hook 'before-save-hook 'tide-format-before-save)
-
 (add-hook 'typescript-mode-hook #'setup-tide-mode)
-
-(setq tide-format-options '(:insertSpaceAfterFunctionKeywordForAnonymousFunctions t :placeOpenBraceOnNewLineForFunctions nil :indentSize 2 :tabSize 2 :insertSpaceAfterOpeningAndBeforeClosingTemplateStringBraces nil :placeOpenBraceOnNewLineForControlBlocks nil))
 
 (defun my-js-mode-hook ()
   "Custom `js-mode' behaviours."
@@ -50,28 +45,24 @@ apps are not started from a shell."
 (use-package scss-mode
   :mode ("\\.scss$" "\\.sass$"))
 
-;; JS
-(setq-default js-indent-level 4)
-
-;; ;; Typescript
-;; (use-package typescript-mode
-;;   :mode "\\.tsx?$"
-;;   :hook
-;;   (typescript-mode . lsp)
-;;   :custom
-;;   (typescript-indent-level 2))
+;; Typescript
+(use-package typescript-mode
+  :mode "\\.tsx?$"
+  :hook
+  (typescript-mode . lsp))
 
 (require 'web-mode)
-(add-to-list 'auto-mode-alist '("\\.tsx\\'" . web-mode))
-(add-hook 'web-mode-hook
-t          (lambda ()
-            (when (string-equal "tsx" (file-name-extension buffer-file-name))
-              (setup-tide-mode))))
+
 ;; enable typescript-tslint checker
 (flycheck-add-mode 'typescript-tslint 'web-mode)
 
 ;; enable prettier
-(add-hook 'after-init-hook #'global-prettier-mode)
+(require 'prettier-js)
+
+(add-hook 'typescript-mode-hook 'prettier-js-mode)
+(add-hook 'web-mode-hook 'prettier-js-mode)
+
+(use-package lsp-tailwindcss)
 
 ;; (provide '04typescript-setup)
 ;;; 04typescript-setup.el ends here
