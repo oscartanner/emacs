@@ -45,16 +45,22 @@ apps are not started from a shell."
 (use-package scss-mode
   :mode ("\\.scss$" "\\.sass$"))
 
-;; Typescript
-(use-package typescript-mode
-  :mode "\\.tsx?$"
-  :hook
-  (typescript-mode . lsp))
-
 (require 'web-mode)
 
-;; enable typescript-tslint checker
-(flycheck-add-mode 'typescript-tslint 'web-mode)
+(use-package web-mode
+  :custom
+  (web-mode-markup-indent-offset 2)
+  (web-mode-css-indent-offset 2)
+  (web-mode-code-indent-offset 2))
+
+(add-to-list 'auto-mode-alist '("\\.tsx\\'" . web-mode))
+(add-hook 'web-mode-hook
+          (lambda ()
+            (when (string-equal "tsx" (file-name-extension buffer-file-name))
+              (setup-tide-mode))))
+
+;; configure jsx-tide checker to run after your default jsx checker
+(flycheck-add-mode 'javascript-eslint 'web-mode)
 
 ;; enable prettier
 (require 'prettier-js)
