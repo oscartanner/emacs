@@ -4,7 +4,7 @@
 (add-to-list 'default-frame-alist '(fullscreen . maximized))
 
 ;; Enable line numbers globally
-(global-linum-mode t)
+(global-display-line-numbers-mode)
 
 ;; Enable column number mode
 (column-number-mode 1)
@@ -102,13 +102,14 @@
      (define-key flyspell-mouse-map [mouse-3] #'undefined)))
 
 ;; Spell check
-(setq ispell-program-name "/opt/homebrew/bin/ispell")
+(setq ispell-program-name "/usr/local/bin/ispell")
 
 ;; Pandoc-mode for markdown
 (add-hook 'markdown-mode-hook 'pandoc-mode)
 
 ;; doom-modeline-init
-(doom-modeline-init)
+(require 'doom-modeline)
+(doom-modeline-mode 1)
 
 ;; set up unicode
 (prefer-coding-system       'utf-8)
