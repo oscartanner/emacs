@@ -21,7 +21,7 @@
 
 ; list the packages you want
 (defvar package-list)
-(setq package-list '(json-mode magit smartparens ruby-tools robe rbenv rainbow-mode projectile multiple-cursors grizzl flycheck feature-mode enh-ruby-mode markdown-mode go-projectile gotest pandoc-mode exec-path-from-shell doom-modeline doom-themes yaml-mode dockerfile-mode tide groovy-mode use-package protobuf-mode elpy py-autopep8 company company-go importmagic web-mode company-jedi py-isort blacken css-mode scss-mode typescript-mode lsp-tailwindcss prettier-js grails-mode grails-projectile-mode))
+(setq package-list '(json-mode magit smartparens ruby-tools robe rbenv rainbow-mode projectile multiple-cursors grizzl flycheck feature-mode enh-ruby-mode markdown-mode go-projectile gotest pandoc-mode exec-path-from-shell doom-modeline doom-themes yaml-mode dockerfile-mode tide groovy-mode use-package protobuf-mode elpy py-autopep8 company company-go importmagic web-mode company-jedi py-isort blacken css-mode scss-mode typescript-mode lsp-tailwindcss prettier-js))
 
 ; activate all the packages (in particular autoloads)
 (package-initialize)
@@ -42,11 +42,11 @@
 (load "00common-setup.el")
 (load "01ruby-setup.el")
 (load "02packages-setup.el")
-(load "03python.el")
-(load "04typescript-setup.el")
+;; (load "03python.el")
+;; (load "04typescript-setup.el")
 ;; (load "05scala_setup.el")
 ;; (load "06go-setup.el")
-(load "07grails-setup.el")
+;; (load "07grails-setup.el")
 
 
 (provide 'init)
@@ -61,7 +61,7 @@
  '(markdown-command "/usr/local/bin/pandoc")
  '(menu-bar-mode nil)
  '(package-selected-packages
-   '(grails-mode grails-projectile-mode prettier-js lsp-tailwindcss blacken protobuf-mode elpy python-mode groovy-mode dockerfile-mode yaml-mode doom-themes doom-modeline exec-path-from-shell pandoc-mode json-mode markdown-mode magit smartparens ruby-tools robe rbenv rainbow-mode projectile multiple-cursors grizzl flycheck feature-mode enh-ruby-mode use-package pyenv-mode py-autopep8))
+   '(prettier-js lsp-tailwindcss blacken protobuf-mode elpy python-mode groovy-mode dockerfile-mode yaml-mode doom-themes doom-modeline exec-path-from-shell pandoc-mode json-mode markdown-mode magit smartparens ruby-tools robe rbenv rainbow-mode projectile multiple-cursors grizzl flycheck feature-mode enh-ruby-mode use-package pyenv-mode py-autopep8))
  '(scroll-bar-mode nil)
  '(show-paren-mode t)
  '(tool-bar-mode nil)
